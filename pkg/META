@@ -1,0 +1,5 @@
+description = ""
+version = "0.1"
+requires = "dynlink"
+archive(native) = "linkage.cmxa"
+archive(byte) = "linkage.cma"
