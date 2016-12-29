@@ -1,1 +1,6 @@
+# Plugin_intf is not included in this file, even though Plugin depends
+# upon it. The dependency is resolved when the plugin is loaded, and
+# linked at runtime against the main application's Plugin_intf.
+
 Plugin
+
