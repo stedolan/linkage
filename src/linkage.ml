@@ -14,6 +14,12 @@ type error =
 
 
 let load s =
+  let s =
+    if Filename.check_suffix s ".cma" ||
+       Filename.check_suffix s ".cmo" then
+      Dynlink.adapt_filename s
+    else
+      s in
   match Dynlink.loadfile_private s with
   | () ->
      Error Not_a_linkage_plugin
@@ -34,7 +40,8 @@ let raise_error r =
        e in
   let text = match err with
     | Dynlink_error e -> Dynlink.error_message e
-    | Not_a_linkage_plugin -> ""
+    | Not_a_linkage_plugin -> "Not a Linkage plugin"
     | Wrong_plugin_type p ->
+       "Wrong plugin type " ^
        Obj.(extension_name (extension_constructor p)) in
   raise (Error (text, err))
