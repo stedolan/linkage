@@ -4,4 +4,4 @@ module type T = sig
   val to_string : t -> string
 end
 
-type Linkage.plugin += Plugin of (module T)
+type Linkage.plugin += MyModPlugin of (module T)

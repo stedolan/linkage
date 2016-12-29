@@ -5,4 +5,4 @@ module M = struct
 end
 
 ;;
-Linkage.provide (Plugin_intf.Plugin (module M))
+Linkage.provide (Plugin_intf.MyModPlugin (module M))

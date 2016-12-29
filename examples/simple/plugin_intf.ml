@@ -1,1 +1,1 @@
-type Linkage.plugin += Plugin of (int -> string)
+type Linkage.plugin += MyPlugin of (int -> string)
